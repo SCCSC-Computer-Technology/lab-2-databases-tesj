@@ -1,0 +1,12 @@
+C:\Users\tjspe\Desktop\SCC\Semseter 5\CPT-206\T-Speich-CPT-206-A01S-Lab-2\bin\Debug\PopulationDB.mdf
+C:\Users\tjspe\Desktop\SCC\Semseter 5\CPT-206\T-Speich-CPT-206-A01S-Lab-2\bin\Debug\PopulationDB_log.ldf
+C:\Users\tjspe\Desktop\SCC\Semseter 5\CPT-206\T-Speich-CPT-206-A01S-Lab-2\bin\Debug\T-Speich-CPT-206-A01S-Lab-2.exe.config
+C:\Users\tjspe\Desktop\SCC\Semseter 5\CPT-206\T-Speich-CPT-206-A01S-Lab-2\bin\Debug\T-Speich-CPT-206-A01S-Lab-2.exe
+C:\Users\tjspe\Desktop\SCC\Semseter 5\CPT-206\T-Speich-CPT-206-A01S-Lab-2\bin\Debug\T-Speich-CPT-206-A01S-Lab-2.pdb
+C:\Users\tjspe\Desktop\SCC\Semseter 5\CPT-206\T-Speich-CPT-206-A01S-Lab-2\obj\Debug\T-Speich-CPT-206-A01S-Lab-2.csproj.AssemblyReference.cache
+C:\Users\tjspe\Desktop\SCC\Semseter 5\CPT-206\T-Speich-CPT-206-A01S-Lab-2\obj\Debug\T_Speich_CPT_206_A01S_Lab_2.Properties.Resources.resources
+C:\Users\tjspe\Desktop\SCC\Semseter 5\CPT-206\T-Speich-CPT-206-A01S-Lab-2\obj\Debug\T-Speich-CPT-206-A01S-Lab-2.csproj.GenerateResource.cache
+C:\Users\tjspe\Desktop\SCC\Semseter 5\CPT-206\T-Speich-CPT-206-A01S-Lab-2\obj\Debug\T-Speich-CPT-206-A01S-Lab-2.csproj.CoreCompileInputs.cache
+C:\Users\tjspe\Desktop\SCC\Semseter 5\CPT-206\T-Speich-CPT-206-A01S-Lab-2\obj\Debug\T-Speich-CPT-206-A01S-Lab-2.exe
+C:\Users\tjspe\Desktop\SCC\Semseter 5\CPT-206\T-Speich-CPT-206-A01S-Lab-2\obj\Debug\T-Speich-CPT-206-A01S-Lab-2.pdb
+C:\Users\tjspe\Desktop\SCC\Semseter 5\CPT-206\T-Speich-CPT-206-A01S-Lab-2\obj\Debug\T_Speich_CPT_206_A01S_Lab_2.MainForm.resources
