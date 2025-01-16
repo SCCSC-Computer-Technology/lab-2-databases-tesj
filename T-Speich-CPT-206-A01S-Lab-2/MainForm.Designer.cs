@@ -30,11 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.exitButton = new System.Windows.Forms.Button();
             this.cityBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.cityBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.populationDBDataSet = new T_Speich_CPT_206_A01S_Lab_2.PopulationDBDataSet();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -47,6 +49,8 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.cityBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.cityDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.populationMinButton = new System.Windows.Forms.Button();
             this.cityAscendingButton = new System.Windows.Forms.Button();
             this.cityDescendingButton = new System.Windows.Forms.Button();
@@ -55,17 +59,15 @@
             this.populationMaxButton = new System.Windows.Forms.Button();
             this.populationAverageButton = new System.Windows.Forms.Button();
             this.populationSumButton = new System.Windows.Forms.Button();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cityBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.populationDBDataSet = new T_Speich_CPT_206_A01S_Lab_2.PopulationDBDataSet();
             this.cityTableAdapter = new T_Speich_CPT_206_A01S_Lab_2.PopulationDBDataSetTableAdapters.CityTableAdapter();
             this.tableAdapterManager = new T_Speich_CPT_206_A01S_Lab_2.PopulationDBDataSetTableAdapters.TableAdapterManager();
+            this.formToolTips = new System.Windows.Forms.ToolTip(this.components);
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             ((System.ComponentModel.ISupportInitialize)(this.cityBindingNavigator)).BeginInit();
             this.cityBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cityDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cityBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.populationDBDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cityDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // exitButton
@@ -76,6 +78,7 @@
             this.exitButton.Size = new System.Drawing.Size(86, 50);
             this.exitButton.TabIndex = 0;
             this.exitButton.Text = "E&xit";
+            this.formToolTips.SetToolTip(this.exitButton, "Exit the program");
             this.exitButton.UseVisualStyleBackColor = true;
             this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
@@ -117,6 +120,16 @@
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorAddNewItem.Text = "Add new";
+            // 
+            // cityBindingSource
+            // 
+            this.cityBindingSource.DataMember = "City";
+            this.cityBindingSource.DataSource = this.populationDBDataSet;
+            // 
+            // populationDBDataSet
+            // 
+            this.populationDBDataSet.DataSetName = "PopulationDBDataSet";
+            this.populationDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // bindingNavigatorCountItem
             // 
@@ -216,6 +229,25 @@
             this.cityDataGridView.Name = "cityDataGridView";
             this.cityDataGridView.Size = new System.Drawing.Size(503, 220);
             this.cityDataGridView.TabIndex = 2;
+            this.formToolTips.SetToolTip(this.cityDataGridView, "Contains entries for cities and their populations");
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "City";
+            dataGridViewCellStyle1.NullValue = null;
+            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridViewTextBoxColumn1.HeaderText = "City";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 230;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Population";
+            dataGridViewCellStyle2.Format = "N0";
+            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridViewTextBoxColumn2.HeaderText = "Population";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Width = 230;
             // 
             // populationMinButton
             // 
@@ -224,6 +256,7 @@
             this.populationMinButton.Size = new System.Drawing.Size(95, 58);
             this.populationMinButton.TabIndex = 3;
             this.populationMinButton.Text = "View City with S&mallest Population";
+            this.formToolTips.SetToolTip(this.populationMinButton, "View the entry that has the smallest (least) population");
             this.populationMinButton.UseVisualStyleBackColor = true;
             this.populationMinButton.Click += new System.EventHandler(this.populationMinButton_Click);
             // 
@@ -244,6 +277,7 @@
             this.cityDescendingButton.Size = new System.Drawing.Size(85, 42);
             this.cityDescendingButton.TabIndex = 5;
             this.cityDescendingButton.Text = "Sort by City &Descending";
+            this.formToolTips.SetToolTip(this.cityDescendingButton, "Sort the entries by city name descending");
             this.cityDescendingButton.UseVisualStyleBackColor = true;
             this.cityDescendingButton.Click += new System.EventHandler(this.cityDescendingButton_Click);
             // 
@@ -254,6 +288,7 @@
             this.populationDescendingButton.Size = new System.Drawing.Size(85, 61);
             this.populationDescendingButton.TabIndex = 7;
             this.populationDescendingButton.Text = "Sort by Population D&escending";
+            this.formToolTips.SetToolTip(this.populationDescendingButton, "Sort the entries by population descending");
             this.populationDescendingButton.UseVisualStyleBackColor = true;
             this.populationDescendingButton.Click += new System.EventHandler(this.populationDescendingButton_Click);
             // 
@@ -264,6 +299,7 @@
             this.populationAscendingButton.Size = new System.Drawing.Size(85, 61);
             this.populationAscendingButton.TabIndex = 6;
             this.populationAscendingButton.Text = "Sort by Population A&scending";
+            this.formToolTips.SetToolTip(this.populationAscendingButton, "Sort the entries by population ascending");
             this.populationAscendingButton.UseVisualStyleBackColor = true;
             this.populationAscendingButton.Click += new System.EventHandler(this.populationAscendingButton_Click);
             // 
@@ -274,6 +310,7 @@
             this.populationMaxButton.Size = new System.Drawing.Size(95, 58);
             this.populationMaxButton.TabIndex = 8;
             this.populationMaxButton.Text = "View City with &Largest Population";
+            this.formToolTips.SetToolTip(this.populationMaxButton, "View the entry that has the largest (most) population");
             this.populationMaxButton.UseVisualStyleBackColor = true;
             this.populationMaxButton.Click += new System.EventHandler(this.populationMaxButton_Click);
             // 
@@ -284,6 +321,7 @@
             this.populationAverageButton.Size = new System.Drawing.Size(140, 58);
             this.populationAverageButton.TabIndex = 9;
             this.populationAverageButton.Text = "View A&verage Population";
+            this.formToolTips.SetToolTip(this.populationAverageButton, "View the average population of all entries");
             this.populationAverageButton.UseVisualStyleBackColor = true;
             this.populationAverageButton.Click += new System.EventHandler(this.populationAverageButton_Click);
             // 
@@ -294,36 +332,9 @@
             this.populationSumButton.Size = new System.Drawing.Size(140, 58);
             this.populationSumButton.TabIndex = 10;
             this.populationSumButton.Text = "View &Total Population";
+            this.formToolTips.SetToolTip(this.populationSumButton, "View the sum of the populations of all entires");
             this.populationSumButton.UseVisualStyleBackColor = true;
             this.populationSumButton.Click += new System.EventHandler(this.populationSumButton_Click);
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "City";
-            dataGridViewCellStyle3.NullValue = null;
-            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridViewTextBoxColumn1.HeaderText = "City";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 230;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Population";
-            dataGridViewCellStyle4.Format = "N0";
-            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridViewTextBoxColumn2.HeaderText = "Population";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 230;
-            // 
-            // cityBindingSource
-            // 
-            this.cityBindingSource.DataMember = "City";
-            this.cityBindingSource.DataSource = this.populationDBDataSet;
-            // 
-            // populationDBDataSet
-            // 
-            this.populationDBDataSet.DataSetName = "PopulationDBDataSet";
-            this.populationDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // cityTableAdapter
             // 
@@ -335,13 +346,23 @@
             this.tableAdapterManager.CityTableAdapter = this.cityTableAdapter;
             this.tableAdapterManager.UpdateOrder = T_Speich_CPT_206_A01S_Lab_2.PopulationDBDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // Form1
+            // toolStrip1
+            // 
+            this.toolStrip1.Location = new System.Drawing.Point(0, 25);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(663, 25);
+            this.toolStrip1.TabIndex = 11;
+            this.toolStrip1.Text = "toolStrip1";
+            this.formToolTips.SetToolTip(this.toolStrip1, "Sort the entries by city name ascending");
+            // 
+            // MainForm
             // 
             this.AcceptButton = this.populationAverageButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.exitButton;
             this.ClientSize = new System.Drawing.Size(663, 425);
+            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.populationSumButton);
             this.Controls.Add(this.populationAverageButton);
             this.Controls.Add(this.populationMaxButton);
@@ -355,16 +376,16 @@
             this.Controls.Add(this.exitButton);
             this.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "T-Speich-CPT-206-A01S-Lab-2: Population Database";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.cityBindingNavigator)).EndInit();
             this.cityBindingNavigator.ResumeLayout(false);
             this.cityBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cityDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cityBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.populationDBDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cityDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -401,6 +422,8 @@
         private System.Windows.Forms.Button populationSumButton;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.ToolTip formToolTips;
+        private System.Windows.Forms.ToolStrip toolStrip1;
     }
 }
 
