@@ -1,0 +1,2 @@
+I really enjoyed looking at your code as expected the code os well organozed and the comments explain clearly creating great documentation. we seemed to have a similar approch but i was curious about you using Application.Exit() 
+as your exit button instead of the this.Close() or this.Dispose() is there a particular reason or was it just a preference.
